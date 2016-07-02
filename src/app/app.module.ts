@@ -1,4 +1,7 @@
 module app {
     'use strict';
-    angular.module('contactManagement', []);
+    angular.module('contactManagement', [
+        'common.services',
+        'contactResourceMock'
+    ]);
 }

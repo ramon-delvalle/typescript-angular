@@ -11,7 +11,7 @@ var app;
                 this.$resource = $resource;
             }
             DataAccessService.prototype.getContactResource = function () {
-                return this.$resource('api/contacts/:id');
+                return this.$resource('/api/contacts/:id');
             };
             DataAccessService.$inject = ['$resource'];
             return DataAccessService;

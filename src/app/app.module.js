@@ -1,5 +1,8 @@
 var app;
 (function (app) {
     'use strict';
-    angular.module('contactManagement', []);
+    angular.module('contactManagement', [
+        'common.services',
+        'contactResourceMock'
+    ]);
 })(app || (app = {}));

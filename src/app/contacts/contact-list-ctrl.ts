@@ -16,46 +16,16 @@ module app.contactList {
         showImage: boolean;
         contacts: app.domain.IContact[];
 
-        constructor() {
+        static $inject = ['dataAccessService'];
+        constructor(private dataAccessService: app.common.DataAccessService) {
             this.title = "Contact List";
             this.showImage = false;
-            this.contacts = [
-                {
-                    "id": 1,
-                    "name": "Benjamin Franklin",
-                    "phone": "(555)555-1790",
-                    "email": "benjaminfranklin@uspresidents.com",
-                    "imageUrl": "images/no-image.png"
-                },
-                {
-                    "id": 2,
-                    "name": "Abraham Lincoln",
-                    "phone": "(555)555-1865",
-                    "email": "abrahamlincoln@uspresidents.com",
-                    "imageUrl": "images/no-image.png"
-                },
-                {
-                    "id": 3,
-                    "name": "Franklin Roosevelt",
-                    "phone": "(555)555-1945",
-                    "email": "franklinroosevelt@uspresidents.com",
-                    "imageUrl": "images/no-image.png"
-                },
-                {
-                    "id": 5,
-                    "name": "William Harrison",
-                    "phone": "(555)555-1841",
-                    "email": "williamharrison@uspresidents.com",
-                    "imageUrl": "images/no-image.png"
-                },
-                {
-                    "id": 6,
-                    "name": "William Harding",
-                    "phone": "(555)555-1923",
-                    "email": "williamharding@uspresidents.com",
-                    "imageUrl": "images/no-image.png"
-                }
-            ]
+            this.contacts = []
+
+            var contactResource = dataAccessService.getContactResource();
+            contactResource.query((data: app.domain.IContact[]) => {
+                this.contacts = data;
+            });
         }
 
         toggleImage(): void {

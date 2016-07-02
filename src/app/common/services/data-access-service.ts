@@ -21,7 +21,7 @@ module app.common {
         }
 
         getContactResource(): ng.resource.IResourceClass<IContactResource> {
-            return this.$resource('api/contacts/:id');
+            return this.$resource('/api/contacts/:id');
         }
     }
 
