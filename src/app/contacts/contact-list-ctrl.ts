@@ -3,7 +3,7 @@ module app.contactList {
     interface IContactListModel {
         title: string;
         showImage: boolean;
-        contacts: any[];
+        contacts: app.domain.IContact[];
         toggleImage(): void;
     }
 
@@ -14,7 +14,7 @@ module app.contactList {
         
         title: string;
         showImage: boolean;
-        contacts: any[];
+        contacts: app.domain.IContact[];
 
         constructor() {
             this.title = "Contact List";
