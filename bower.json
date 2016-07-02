@@ -1,0 +1,25 @@
+{
+  "name": "src",
+  "homepage": "https://github.com/ramon-delvalle/typescript-angular",
+  "authors": [
+    "Ramon Del Valle <ramon.delvalle@icloud.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-mocks": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "angular-resource": "^1.5.7"
+  }
+}
