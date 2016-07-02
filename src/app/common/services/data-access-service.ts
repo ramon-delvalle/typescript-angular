@@ -17,7 +17,6 @@ module app.common {
 
         static $inject = ['$resource'];
         constructor(private $resource: ng.resource.IResourceService) {
-            
         }
 
         getContactResource(): ng.resource.IResourceClass<IContactResource> {

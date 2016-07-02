@@ -46,6 +46,22 @@ module app.common {
         contacts.push(contact);
 
         $httpBackend.whenGET(contactUrl).respond(contacts);
+        $httpBackend.whenGET(editingRegex).respond(function(method, url, data){
+            var contact = { 'id': 0 };
+            var parameters = url.split('/');
+            var length = parameters.length;
+            var id = parameters[length - 1];
+
+            if (parseInt(id) > 0) {
+                for (var i = 0; i < contacts.length; i++) {
+                    if (contacts[i].id == parseInt(id)) {
+                        contact = contacts[i];
+                        break;
+                    }
+                }
+            }
+            return[200, contact, {}];
+        });
 
         $httpBackend.whenGET(/app/).passThrough();
     }

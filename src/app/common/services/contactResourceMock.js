@@ -21,6 +21,21 @@ var app;
             contact = new app.domain.Contact(6, "William Harding", "(555)555-1923", "williamharding@uspresidents.com", "images/no-image.png");
             contacts.push(contact);
             $httpBackend.whenGET(contactUrl).respond(contacts);
+            $httpBackend.whenGET(editingRegex).respond(function (method, url, data) {
+                var contact = { 'id': 0 };
+                var parameters = url.split('/');
+                var length = parameters.length;
+                var id = parameters[length - 1];
+                if (parseInt(id) > 0) {
+                    for (var i = 0; i < contacts.length; i++) {
+                        if (contacts[i].id == parseInt(id)) {
+                            contact = contacts[i];
+                            break;
+                        }
+                    }
+                }
+                return [200, contact, {}];
+            });
             $httpBackend.whenGET(/app/).passThrough();
         }
     })(common = app.common || (app.common = {}));

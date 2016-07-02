@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+
+    <div class="panel-heading" style="font-size:large;">
+        {{::vm.title}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-2">Name:</div>
+                    <div class="col-md-6">{{vm.contact.name}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Phone:</div>
+                    <div class="col-md-6">{{vm.contact.phone}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">Email:</div>
+                    <div class="col-md-6 ">{{vm.contact.email}}</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="center-block img-responsive" style="width: 200px; margin: 2px;" data-ng-src="{{vm.contact.imageUrl}}">
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a data-ng-href="#contactList">
+            < Back </a>
+    </div>
+</div>

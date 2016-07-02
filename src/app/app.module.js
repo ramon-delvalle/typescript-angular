@@ -14,6 +14,10 @@ var app;
             templateUrl: './app/contacts/contact-list-view.html',
             controller: 'ContactListCtrl as vm'
         })
+            .when('/contactDetail/:id', {
+            templateUrl: './app/contacts/contact-detail-view.html',
+            controller: 'ContactDetailCtrl as vm'
+        })
             .otherwise('/contactList');
     }
 })(app || (app = {}));
